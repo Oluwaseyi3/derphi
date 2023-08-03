@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { MenuOutlined } from '@ant-design/icons';
 import OutlineButton from '../Button/Outline';
+import derpfi from "../../public/assets/derpfi.png"
 
 const Nav = styled(Layout.Header)`
     width: 100vw;
@@ -110,7 +111,7 @@ const Navbar: React.FC = (): React.ReactElement => {
                 <Col xs={10} sm={10} md={4} style={{ height: '100%' }}>
                     <Link href="/">
                        
-                            <Logo height="55px" width="55px" src="/assets/primary_logo_shadow.svg" preview={false} />
+                            <Logo height="55px" width="55px" src="../assets/derpfi.png" alt="" preview={false} />
                     
                     </Link>
                 </Col>

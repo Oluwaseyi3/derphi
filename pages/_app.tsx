@@ -13,7 +13,7 @@ function getLibrary(provider: ExternalProvider | JsonRpcFetchFunc) {
 
 const theme = {
     maxWidth: '1500px',
-    primary: '#E7694C',
+    primary: '#0000FF',
     darkGrey: '#292929',
     grey: '#AAAAAA',
     spaceGrey: '#EFEFEF',
@@ -99,7 +99,7 @@ export default function NextWeb3App({ Component, pageProps }: AppProps) {
             <ThemeProvider theme={theme}>
                 <Layout style={{ minHeight: '100vh', overflow: 'hidden' }}>
                     <head>
-                        <title>Bundle</title>
+                        <title>Derpfi</title>
                         <link rel="icon" href="/favicon.ico" />
                     </head>
 

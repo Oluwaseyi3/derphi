@@ -196,7 +196,7 @@ const Landing: React.FC = (): React.ReactElement => {
                         <div>
                             <h1 style={{ position: 'relative' }}>
                                 <img
-                                    src="/assets/bundle.png"
+                                    src="/assets/derpfi.png"
                                     width="275px"
                                     style={{
                                         position: 'absolute',
@@ -206,13 +206,13 @@ const Landing: React.FC = (): React.ReactElement => {
                                         opacity: '0.25',
                                     }}
                                 />
-                                <span style={{ zIndex: 2 }}>We are a dao.</span>
+                               
                             </h1>
-                            <p style={{ maxWidth: '600px' }}>
-                                Bundle is redefining passive asset management. We're a community-governed project
+                            <h3 style={{ maxWidth: '600px' }}>
+                                Derpfi is redefining passive asset management. We're a community-governed project
                                 offering full exposure to crypto risk-management and the DeFi ecosystem through
                                 passively managed, non-custodial funds and indices.
-                            </p>
+                            </h3>
                             <div style={{ margin: '30px 0px' }}>
                                 <a href="https://docs.bundledao.org">
                                     <OutlinedButton>Discover</OutlinedButton>
@@ -221,7 +221,7 @@ const Landing: React.FC = (): React.ReactElement => {
                         </div>
                     </LandingCol>
                     <LandingCol xs={24} sm={24} md={12}>
-                        <BoxMain height="100%" width="100%" src="/assets/box_main.png" />
+                        <BoxMain height="100%" width="100%" src="/assets/derpfi.png" />
                     </LandingCol>
                 </LandingRow>
             </RowContainer>
