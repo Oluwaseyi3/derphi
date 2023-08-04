@@ -12,6 +12,7 @@ import StakingCard, { VaultCard } from '../../components/StakingCard';
 import { TransactionReceipt, TransactionResponse } from '@ethersproject/providers';
 import { errorMessage, txMessage, unlockMessage } from '../../components/Messages';
 
+
 const RowContainer = styled.div`
     width: 100vw;
 

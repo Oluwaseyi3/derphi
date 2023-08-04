@@ -1,4 +1,4 @@
-import { BigNumberish } from '@ethersproject/bignumber';
+import { BigNumberish, BigNumber} from '@ethersproject/bignumber';
 import useSWR from 'swr';
 import useKeepSWRDataLiveAsBlocksArrive from './useKeepSWRDataLiveAsBlocksArrive';
 import { Contract } from '@ethersproject/contracts';
@@ -6,7 +6,10 @@ import { useWeb3React } from '@web3-react/core';
 
 function getApproved(token: Contract) {
     return async (owner: any, spender: any, _: any) => {
-        return token.allowance(owner, spender).then((allowance: BigNumberish) => (allowance > 0 ? true : false));
+        return token.allowance(owner, spender).then((allowance: BigNumberish) => {
+            const allowanceBN = BigNumber.from(allowance);
+            return allowanceBN.gt(0);
+        });
     };
 }
 

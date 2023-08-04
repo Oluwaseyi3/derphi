@@ -288,7 +288,12 @@ const StakingCard: React.FC<Props> = (props: Props): React.ReactElement => {
                             min={'0'}
                             style={{ width: '100%', margin: '10px 0px 10px 0px' }}
                             value={formatUnits(toStake, 18)}
-                            onChange={(newValue) => setToStake(parseEther(newValue))}
+                            onChange={(newValue) => {
+                                if (newValue !== null) {
+                                    setToStake(parseEther(newValue));
+                                }
+                        
+                            }}
                             disabled={
                                 props.disabled ||
                                 !unstakedBalance ||
@@ -374,7 +379,11 @@ const StakingCard: React.FC<Props> = (props: Props): React.ReactElement => {
                             min={'0'}
                             style={{ width: '100%', margin: '10px 0px 10px 0px' }}
                             value={formatUnits(toUnstake, 18)}
-                            onChange={(newValue) => setToUnstake(parseEther(newValue))}
+                            onChange={(newValue) => {
+                                if (newValue !== null) {
+                                    setToUnstake(parseEther(newValue))
+                                }
+                            }}
                             disabled={
                                 props.disabled ||
                                 !stakedBalance ||

@@ -1,4 +1,4 @@
-import { BigNumberish } from '@ethersproject/bignumber';
+import { BigNumberish, BigNumber} from '@ethersproject/bignumber';
 import useSWR from 'swr';
 import useKeepSWRDataLiveAsBlocksArrive from './useKeepSWRDataLiveAsBlocksArrive';
 import { Contract } from '@ethersproject/contracts';
@@ -11,7 +11,7 @@ function getApprovals(tokens: Contract[]) {
                 async (token) =>
                     await token
                         .allowance(owner, spender)
-                        .then((allowance: BigNumberish) => (allowance > 0 ? true : false))
+                        .then((allowance: any) => (allowance > 0 ? true : false))
             )
         );
     };
