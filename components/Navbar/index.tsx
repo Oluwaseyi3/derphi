@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { MenuOutlined } from '@ant-design/icons';
 import OutlineButton from '../Button/Outline';
-import derpfi from "../../public/assets/derpfi.png"
+
 
 const Nav = styled(Layout.Header)`
     width: 100vw;

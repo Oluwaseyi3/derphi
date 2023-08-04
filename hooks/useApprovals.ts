@@ -11,11 +11,12 @@ function getApprovals(tokens: Contract[]) {
                 async (token) =>
                     await token
                         .allowance(owner, spender)
-                        .then((allowance: any) => (allowance > 0 ? true : false))
+                        .then((allowance: BigNumberish) => BigNumber.from(allowance).gt(0))
             )
         );
     };
 }
+
 
 export default function useApprovals(tokens: Contract[] | undefined, spender: string | undefined, suspense = false) {
     const { account } = useWeb3React();
