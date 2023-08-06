@@ -40,6 +40,7 @@ const RowContainer = styled.div<RowContainerProps>`
 const LandingRow = styled(Row)`
     max-width: ${(props) => props.theme.maxWidth};
     width: 100%;
+
 `;
 
 const LandingCol = styled(Col)`
@@ -214,7 +215,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                 passively managed, non-custodial funds and indices.
                             </h3>
                             <div style={{ margin: '30px 0px' }}>
-                                <a href="https://docs.bundledao.org">
+                                <a href="#">
                                     <OutlinedButton>Discover</OutlinedButton>
                                 </a>
                             </div>
@@ -233,7 +234,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                 Earn rewards for active participation
                             </h1>
                             <p style={{ maxWidth: '600px' }}>
-                                At Bundle, we decided to distribute governance tokens in return for active community
+                                At Derpfi, we decided to distribute governance tokens in return for active community
                                 participation. With no private investment, presale or ICO, all tokens are being
                                 distributed fairly and deterministically to individuals actively supporting our mission.
                             </p>
@@ -244,9 +245,9 @@ const Landing: React.FC = (): React.ReactElement => {
                         <Link href="/staking">
                            
                                 <RewardCard
-                                    image="/assets/logo.svg"
+                                    image="/assets/derpfi-small.png"
                                     imageSecondary="/assets/BNB.png"
-                                    name="Bundle"
+                                    name="Derpfi"
                                     ticker="BDL-BNB"
                                     apy={bdlApy}
                                     width="100%"
@@ -258,7 +259,7 @@ const Landing: React.FC = (): React.ReactElement => {
                         <Link href="/staking">
                         
                                 <RewardCard
-                                    image="/assets/primary_logo_token.svg"
+                                    image="/assets/derpfi-small.png"
                                     imageSecondary="/assets/BUSD.png"
                                     name="bDefi Index"
                                     ticker="bDEFI-BNB"
@@ -272,7 +273,7 @@ const Landing: React.FC = (): React.ReactElement => {
                         <Link href="/staking">
                           
                                 <RewardCard
-                                    image="/assets/primary_logo_token.svg"
+                                    image="/assets/derpfi-small.png"
                                     imageSecondary="/assets/BUSD.png"
                                     name="bChain Index"
                                     ticker="bCHAIN-BNB"
@@ -286,8 +287,8 @@ const Landing: React.FC = (): React.ReactElement => {
                         <Link href="/staking">
                             
                                 <RewardCard
-                                    image="/assets/primary_logo_token.svg"
-                                    imageSecondary="/assets/BUSD.png"
+                                    image="/assets/BUSD.png"
+                                    imageSecondary="/assets/derpfi-small.png"
                                     name="bStable Index"
                                     ticker="bSTBL-BNB"
                                     apy={bSTBLApy}
@@ -305,7 +306,7 @@ const Landing: React.FC = (): React.ReactElement => {
                     <LandingCol xs={24} sm={24} md={12}>
                         <SecondaryBox
                             width="100%"
-                            src="/assets/box_secondary.svg"
+                            src="/assets/bg.png"
                             preview={false}
                             style={{ marginLeft: '-5%' }}
                         />
@@ -327,8 +328,8 @@ const Landing: React.FC = (): React.ReactElement => {
                                 </h1>
                             </BoxHeader>
                             <p style={{ maxWidth: '600px' }}>
-                                Bundle is tearing down traditional financial definitions surrounding funds and indices
-                                through our innovative Bundles. We're building a protocol that enables users to
+                                Derpfi is tearing down traditional financial definitions surrounding funds and indices
+                                through our innovative Derpfis. We're building a protocol that enables users to
                                 passively maintain risk-optimal portfolios while still gaining the benefits and returns
                                 of active DeFi protocol participation.
                             </p>

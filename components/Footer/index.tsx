@@ -62,14 +62,14 @@ const Footer: React.FC = (): React.ReactElement => {
             <FootContainer align="middle">
                 <FlexCol xs={24} sm={24} md={24} align="flex-start">
                     <Row>
-                        <FooterLink href="https://discord.gg/QAenj3DHyc">Discord</FooterLink>
-                        <FooterLink href="https://twitter.com/bundledao">Twitter</FooterLink>
-                        <FooterLink href="https://bundledao.medium.com/">Medium</FooterLink>
-                        <FooterLink href="https://github.com/bundle-dao">Github</FooterLink>
-                        <FooterLink href="https://docs.bundledao.org">Docs</FooterLink>
+                        <FooterLink href="#">Discord</FooterLink>
+                        <FooterLink href="#">Twitter</FooterLink>
+                        <FooterLink href="#">Medium</FooterLink>
+                        <FooterLink href="#">Github</FooterLink>
+                        <FooterLink href="#">Docs</FooterLink>
                     </Row>
                 </FlexCol>
-                <Logo height="46px" width="55px" src="/assets/dark_logo.svg" />
+                <Logo height="46px" width="55px" src="/assets/derpfi.png" />
                 <Dots height="172px" width="162px" src="/assets/footer_dots.svg" />
             </FootContainer>
         </Foot>
