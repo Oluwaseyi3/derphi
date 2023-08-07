@@ -75,6 +75,13 @@ const BoxHeader = styled.div`
     }
 `;
 
+  const BgBox = styled.div`
+  background-image: url(/assets/bg.png);
+  background-repeat: no-repeat;
+  height:60vh;
+  width: 100%
+  `
+
 const BoxMain = styled.img`
     @media (max-width: 768px) {
         margin-right: -20% !important;
@@ -89,7 +96,7 @@ const getApy = async (
     stakeToken: Contract | undefined,
     token0: string | undefined,
     token1: string | undefined
-) => {
+) => {; 50
     try {
         if (!!minter && !!bundleToken && !!stakeToken) {
             const minterAddress = getNamedAddress(CHAINID, 'Minter');
@@ -306,7 +313,7 @@ const Landing: React.FC = (): React.ReactElement => {
                     <LandingCol xs={24} sm={24} md={12}>
                         <SecondaryBox
                             width="100%"
-                            src="/assets/bg.png"
+                            src="/assets/LAPTOP.png"
                             preview={false}
                             style={{ marginLeft: '-5%' }}
                         />
@@ -337,6 +344,10 @@ const Landing: React.FC = (): React.ReactElement => {
                     </LandingCol>
                 </LandingRow>
             </RowContainer>
+            <BgBox>
+
+            </BgBox>
+           
         </Layout.Content>
     );
 };
