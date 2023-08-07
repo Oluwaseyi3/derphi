@@ -158,7 +158,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                 <RewardRow>
                                     <img height="100%" src="/assets/wallet.png" />
                                     <p>
-                                        Bundle <br /> Balance
+                                        Derpfi <br /> Balance
                                     </p>
                                 </RewardRow>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -218,7 +218,7 @@ const Landing: React.FC = (): React.ReactElement => {
                         <StakingContainer>
                             <h1>Available Staking Options</h1>
                             <VaultCard
-                                image="/assets/logo.svg"
+                                image="/assets/derpfi.png"
                                 name="BDL Vault"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
                                 pid="0"
@@ -227,7 +227,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                 account={account!}
                             />
                             <StakingCard
-                                image="/assets/logo.svg"
+                                image="/assets/derpfi.png"
                                 imageSecondary="/assets/BNB.png"
                                 name="BDL-BNB"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
@@ -239,7 +239,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                 tokenB="0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
                             />
                             <StakingCard
-                                image="/assets/primary_logo_token.svg"
+                                image="/assets/derpfi.png"
                                 imageSecondary="/assets/BUSD.png"
                                 name="bDEFI-BUSD"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
@@ -251,7 +251,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                 tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56"
                             />
                             <StakingCard
-                                image="/assets/primary_logo_token.svg"
+                                image="/assets/derpfi.png"
                                 imageSecondary="/assets/BUSD.png"
                                 name="bCHAIN-BUSD"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
@@ -263,7 +263,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                 tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56"
                             />
                             <StakingCard
-                                image="/assets/primary_logo_token.svg"
+                                image="/assets/derpfi.png"
                                 imageSecondary="/assets/BUSD.png"
                                 name="bSTBL-BUSD"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
