@@ -268,7 +268,7 @@ const StakingCard: React.FC<Props> = (props: Props): React.ReactElement => {
                 </HideOnMobile>
                 <InfoBlock xs={23} sm={23} md={23} lg={9} style={{ justifyContent: 'center', flexGrow: 2 }}>
                     <Text>{`Staked: ${stakedBalance ? parseBalance(stakedBalance) : '0.00'} ${props.name}`}</Text>
-                    <Text>{`Rewards: ${pendingRewards ? pendingRewards : '0.00'} BDL`}</Text>
+                    <Text>{`Rewards: ${pendingRewards ? pendingRewards : '0.00'} DFI`}</Text>
                 </InfoBlock>
                 <InfoBlock xs={1} sm={1} md={1} lg={1}>
                     {expanded ? (

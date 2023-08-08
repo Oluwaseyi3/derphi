@@ -149,7 +149,7 @@ const Landing: React.FC = (): React.ReactElement => {
             <RowContainer>
                 <StakingRow>
                     <StakingCol md={12}>
-                        <BoxImage height="80%" width="80%" src="/assets/staking_boxes.svg" />
+                        <BoxImage height="80%" width="80%" src="/assets/LAPTOP.png" />
                     </StakingCol>
                     <StakingCol xs={24} sm={24} md={12}>
                         <RewardsContainer>
@@ -162,7 +162,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                     </p>
                                 </RewardRow>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                                    <p>{`${!!balance ? balance : '0.0'} BDL`}</p>
+                                    <p>{`${!!balance ? balance : '0.0'} DFI`}</p>
                                 </div>
                             </RewardCard>
                             <RewardCard>
@@ -173,7 +173,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                     </p>
                                 </RewardRow>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                                    <p>{`${!!lockedBalance ? lockedBalance : '0.0'} BDL`}</p>
+                                    <p>{`${!!lockedBalance ? lockedBalance : '0.0'} DFI`}</p>
                                 </div>
                             </RewardCard>
                             <RewardCard style={{ marginBottom: '0px' }}>
@@ -184,7 +184,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                     </p>
                                 </RewardRow>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                                    <p>{`${!!unlockedBalance ? unlockedBalance : '0.0'} BDL`}</p>
+                                    <p>{`${!!unlockedBalance ? unlockedBalance : '0.0'} DFI`}</p>
                                 </div>
                             </RewardCard>
                             <ClaimButton
@@ -219,60 +219,60 @@ const Landing: React.FC = (): React.ReactElement => {
                             <h1>Available Staking Options</h1>
                             <VaultCard
                                 image="/assets/derpfi.png"
-                                name="BDL Vault"
+                                name="DFI Vault"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
                                 pid="0"
-                                vault={getNamedAddress(chainId, 'BundleVault')!}
+                                vault={getNamedAddress(chainId, 'DerpfiVault')!}
                                 disabled={false}
                                 account={account!}
                             />
                             <StakingCard
                                 image="/assets/derpfi.png"
                                 imageSecondary="/assets/BNB.png"
-                                name="BDL-BNB"
+                                name="DFI-BNB"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
                                 pid="0"
-                                stakeToken={getNamedAddress(chainId, 'BDLBNB')!}
+                                stakeToken={getNamedAddress(chainId, 'DFIBNB')!}
                                 disabled={false}
                                 account={account!}
-                                tokenA="0x7ff78e1cab9a2710eb6486ecbf3d94d125039364"
-                                tokenB="0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+                                tokenA="0x7ff78e1cab9a2710eb6486ecbf3d94d125039364" // Bundle (BDL) (@$0.00)
+                                tokenB="0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c" //Wrapped BNB (WBNB) (@$242.685)
                             />
                             <StakingCard
                                 image="/assets/derpfi.png"
                                 imageSecondary="/assets/BUSD.png"
-                                name="bDEFI-BUSD"
+                                name="bDFI-BUSD"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
                                 pid="1"
-                                stakeToken={'0x107a78f4e90141bb4aacdb6b4c903f27baf43e58'}
+                                stakeToken={'0x107a78f4e90141bb4aacdb6b4c903f27baf43e58'} // Pancake LPs (Cake-LP)
                                 disabled={false}
                                 account={account!}
-                                tokenA="0x9eeA2a500455cb08BfdF20D1000a0B5CFF63A495"
-                                tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56"
+                                tokenA="0x9eeA2a500455cb08BfdF20D1000a0B5CFF63A495" // bDeFi Index (bDEFI)
+                                tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56" //Binance-Peg BUSD Token (BUSD) (@$1.0001)
                             />
                             <StakingCard
                                 image="/assets/derpfi.png"
                                 imageSecondary="/assets/BUSD.png"
-                                name="bCHAIN-BUSD"
+                                name="bDFI-BUSD"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
                                 pid="2"
-                                stakeToken={'0x3666d1eE816852A6BD08196243567D3945058E40'}
+                                stakeToken={'0x3666d1eE816852A6BD08196243567D3945058E40'} // Pancake LPs (Cake-LP)
                                 disabled={false}
                                 account={account!}
-                                tokenA="0x3E96F79a607d0d2199976c292f9CDF73991A3439"
-                                tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56"
+                                tokenA="0x3E96F79a607d0d2199976c292f9CDF73991A3439" //bChain Index (bCHAIN)
+                                tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56" //Binance-Peg BUSD Token (BUSD) (@$1.0001)
                             />
                             <StakingCard
                                 image="/assets/derpfi.png"
                                 imageSecondary="/assets/BUSD.png"
-                                name="bSTBL-BUSD"
+                                name="bDFI-BUSD"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
                                 pid="3"
-                                stakeToken={'0xaF748cE79E2c966a660A34c803e63A3e6553E670'}
+                                stakeToken={'0xaF748cE79E2c966a660A34c803e63A3e6553E670'} //Pancake LPs (Cake-LP)
                                 disabled={false}
                                 account={account!}
-                                tokenA="0x934C7F600d6eE2fb60CdFf61d1b9fC82C6b8C011"
-                                tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56"
+                                tokenA="0x934C7F600d6eE2fb60CdFf61d1b9fC82C6b8C011" //bStable (bSTBL)
+                                tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56" //Binance-Peg BUSD Token (BUSD) (@$1.0001)
                             />
                         </StakingContainer>
                     </StakingCol>
