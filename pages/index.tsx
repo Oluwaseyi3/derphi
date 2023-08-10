@@ -147,10 +147,10 @@ const Landing: React.FC = (): React.ReactElement => {
     const minter = useContract(minterAddress!, MinterABI);
     const bundleToken = useContract(bundleTokenAddress!, BundleTokenABI);
 
-    const stakeToken = useContract('0x693e745700D278Bf7e180D3fD94FA1A740807926', PairABI, false);
-    const bDEFIStakeToken = useContract('0x107a78f4e90141bb4aacdb6b4c903f27baf43e58', PairABI, false);
-    const bCHAINStakeToken = useContract('0x3666d1eE816852A6BD08196243567D3945058E40', PairABI, false);
-    const bSTBLStakeToken = useContract('0xaF748cE79E2c966a660A34c803e63A3e6553E670', PairABI, false);
+    const stakeToken = useContract('0x693e745700D278Bf7e180D3fD94FA1A740807926', PairABI, false); //PancakeSwap V2 pool to exchange between BDL and WBNB.
+    const bDEFIStakeToken = useContract('0x107a78f4e90141bb4aacdb6b4c903f27baf43e58', PairABI, false); //PancakeSwap V2 pool to exchange between bDEFI and BUSD.
+    const bCHAINStakeToken = useContract('0x3666d1eE816852A6BD08196243567D3945058E40', PairABI, false); //PancakeSwap V2 pool to exchange between bCHAIN and BUSD.
+    const bSTBLStakeToken = useContract('0xaF748cE79E2c966a660A34c803e63A3e6553E670', PairABI, false); //PancakeSwap V2 pool to exchange between bSTBL and BUSD.
 
     const [bdlApy, setBdlApy] = useState('...');
     const [bDEFIApy, setbDEFIApy] = useState('...');
@@ -164,8 +164,8 @@ const Landing: React.FC = (): React.ReactElement => {
             minter,
             bundleToken,
             stakeToken,
-            '0x7ff78e1cab9a2710eb6486ecbf3d94d125039364',
-            '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
+            '0x7ff78e1cab9a2710eb6486ecbf3d94d125039364', // Bundle (BDL) (@$0.00)
+            '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'//Wrapped BNB (WBNB) (@$242.8211)
         );
         getApy(
             '1',
@@ -173,8 +173,8 @@ const Landing: React.FC = (): React.ReactElement => {
             minter,
             bundleToken,
             bDEFIStakeToken,
-            '0x9eeA2a500455cb08BfdF20D1000a0B5CFF63A495',
-            '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+            '0x9eeA2a500455cb08BfdF20D1000a0B5CFF63A495', // bDeFi Index (bDEFI)
+            '0xe9e7cea3dedca5984780bafc599bd69add087d56' // Binance-Peg BUSD Token (BUSD) 
         );
         getApy(
             '2',
@@ -182,8 +182,8 @@ const Landing: React.FC = (): React.ReactElement => {
             minter,
             bundleToken,
             bCHAINStakeToken,
-            '0x3E96F79a607d0d2199976c292f9CDF73991A3439',
-            '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+            '0x3E96F79a607d0d2199976c292f9CDF73991A3439', //bChain Index (bCHAIN)
+            '0xe9e7cea3dedca5984780bafc599bd69add087d56' // Binance-Peg BUSD Token (BUSD) (@$1.00)
         );
         getApy(
             '3',
@@ -191,8 +191,8 @@ const Landing: React.FC = (): React.ReactElement => {
             minter,
             bundleToken,
             bSTBLStakeToken,
-            '0x934C7F600d6eE2fb60CdFf61d1b9fC82C6b8C011',
-            '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+            '0x934C7F600d6eE2fb60CdFf61d1b9fC82C6b8C011', //bStable (bSTBL)
+            '0xe9e7cea3dedca5984780bafc599bd69add087d56' //Binance-Peg BUSD Token (BUSD) (@$1.00)
         );
     }
 
