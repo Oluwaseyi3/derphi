@@ -1,5 +1,7 @@
 import { Layout, Row, Col } from 'antd';
 import styled from 'styled-components';
+import { BigNumberish } from '@ethersproject/bignumber';
+import { Contract } from '@ethersproject/contracts';
 import React from 'react';
 import useBalance from '../../hooks/useBalance';
 import useLockedBalance from '../../hooks/useLockedBalance';
@@ -137,10 +139,16 @@ const StakingContainer = styled.div`
 
 const Landing: React.FC = (): React.ReactElement => {
     const { account, chainId } = useWeb3React();
-    const bundleTokenAddress = getNamedAddress(chainId, 'BundleToken');
+    const bundleTokenAddress = getNamedAddress(chainId, 'DerpfiToken');
     const bundleToken = useContract(bundleTokenAddress!, BundleTokenABI, true);
+   
+    // console.log(bundleToken);
+    
 
-    const balance = useBalance(bundleToken).data;
+    const balance = useBalance(bundleToken).balance
+     console.log(balance);
+     
+   
     const lockedBalance = useLockedBalance(bundleToken).data;
     const unlockedBalance = useUnlockedBalance(bundleToken).data;
 
@@ -222,7 +230,7 @@ const Landing: React.FC = (): React.ReactElement => {
                                 name="DFI Vault"
                                 imageStyle={{ marginTop: '3px', marginLeft: '2px', zIndex: 2 }}
                                 pid="0"
-                                vault={getNamedAddress(chainId, 'DerpfiVault')!}
+                                vault={getNamedAddress(chainId, 'BundleVault')!}
                                 disabled={false}
                                 account={account!}
                             />
@@ -235,8 +243,8 @@ const Landing: React.FC = (): React.ReactElement => {
                                 stakeToken={getNamedAddress(chainId, 'DFIBNB')!}
                                 disabled={false}
                                 account={account!}
-                                tokenA="0x7ff78e1cab9a2710eb6486ecbf3d94d125039364" // Bundle (BDL) (@$0.00)
-                                tokenB="0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c" //Wrapped BNB (WBNB) (@$242.685)
+                                tokenA="0x620F9998cf912F38030610690e2F164A54F5d44b" // Bundle (BDL) (@$0.00)
+                                tokenB="0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd" //Wrapped BNB (WBNB) (@$242.685)
                             />
                             <StakingCard
                                 image="/assets/derpfi.png"
@@ -247,8 +255,8 @@ const Landing: React.FC = (): React.ReactElement => {
                                 stakeToken={'0x107a78f4e90141bb4aacdb6b4c903f27baf43e58'} // Pancake LPs (Cake-LP)
                                 disabled={false}
                                 account={account!}
-                                tokenA="0x9eeA2a500455cb08BfdF20D1000a0B5CFF63A495" // bDeFi Index (bDEFI)
-                                tokenB="0xe9e7cea3dedca5984780bafc599bd69add087d56" //Binance-Peg BUSD Token (BUSD) (@$1.0001)
+                                tokenA="0x045FE47f58b673402D79Ee13c509bB9E745b793B" // bDeFi Index (bDEFI)
+                                tokenB="0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd" //Binance-Peg BUSD Token (BUSD) (@$1.0001)
                             />
                             <StakingCard
                                 image="/assets/derpfi.png"

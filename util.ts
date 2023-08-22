@@ -7,19 +7,20 @@ export function shortenHex(hex: string, length: number = 4): string {
 
 const NAMED_ADDRESSES: { [index: number]: { [index: string]: string } } = {
     97: {
-        BundleToken: '0x620F9998cf912F38030610690e2F164A54F5d44b',
-        Minter: '0x133F0aDDb0a549E4F70d0bCF2C724050B8cf7284',
+        DerpfiToken: '0x620F9998cf912F38030610690e2F164A54F5d44b',
+        Minter: '0xAEAbF28093fE275bF27c18f41a72e15cfb2FcBAF',
         BDLBNB: '0x620F9998cf912F38030610690e2F164A54F5d44b',
+        BundleVault: '0x133F0aDDb0a549E4F70d0bCF2C724050B8cf7284 ',
     },
-    56: {
-        BundleToken: '0x7fF78E1cab9A2710Eb6486Ecbf3D94D125039364',
-        Minter: '0xA54D10C6666172824Da54C0d90BcdE36B6dAbd85',
-        BDLBNB: '0x693e745700D278Bf7e180D3fD94FA1A740807926',
-        BundleVault: '0x6fdc3805A5F5f6cA28094ed8d20971ca4b85f20c',
-    },
+    // 56: {
+    //     BundleToken: '0x7fF78E1cab9A2710Eb6486Ecbf3D94D125039364',
+    //     Minter: '0xA54D10C6666172824Da54C0d90BcdE36B6dAbd85',
+    //     BDLBNB: '0x693e745700D278Bf7e180D3fD94FA1A740807926',
+    //     BundleVault: '0x6fdc3805A5F5f6cA28094ed8d20971ca4b85f20c',
+    // },
 };
 
-export const CHAIN_IDS: (number | undefined)[] = [97, 56];
+export const CHAIN_IDS: (number | undefined)[] = [97];
 
 const NUMERIC_UNITS: { [index: number]: string } = {
     1: 'K',

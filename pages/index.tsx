@@ -13,7 +13,7 @@ import PairABI from '../contracts/Pair.json';
 import { formatUnits, parseEther } from '@ethersproject/units';
 import { getAsset } from '../lib/asset';
 
-const CHAINID = 56;
+const CHAINID = 97;
 
 interface RowContainerProps {
     dark?: boolean;
@@ -147,15 +147,23 @@ const Landing: React.FC = (): React.ReactElement => {
     const minter = useContract(minterAddress!, MinterABI);
     const bundleToken = useContract(bundleTokenAddress!, BundleTokenABI);
 
-    const stakeToken = useContract('0x693e745700D278Bf7e180D3fD94FA1A740807926', PairABI, false); //PancakeSwap V2 pool to exchange between BDL and WBNB.
-    const bDEFIStakeToken = useContract('0x107a78f4e90141bb4aacdb6b4c903f27baf43e58', PairABI, false); //PancakeSwap V2 pool to exchange between bDEFI and BUSD.
-    const bCHAINStakeToken = useContract('0x3666d1eE816852A6BD08196243567D3945058E40', PairABI, false); //PancakeSwap V2 pool to exchange between bCHAIN and BUSD.
-    const bSTBLStakeToken = useContract('0xaF748cE79E2c966a660A34c803e63A3e6553E670', PairABI, false); //PancakeSwap V2 pool to exchange between bSTBL and BUSD.
+    const stakeToken = useContract('0xe3b698b149634a09B806BC9Ec438111a3d3E833A', PairABI, false); //PancakeSwap V2 pool to exchange between BDL and WBNB.
+    // 0x693e745700D278Bf7e180D3fD94FA1A740807926
+    const bDEFIStakeToken = useContract('0x8100fedEE0463647e401e1ce9295911298A4fc97', PairABI, false); //PancakeSwap V2 pool to exchange between bDEFI and BUSD.
+    // 0x107a78f4e90141bb4aacdb6b4c903f27baf43e58
+    const bCHAINStakeToken = useContract('0x8100fedEE0463647e401e1ce9295911298A4fc97', PairABI, false); //PancakeSwap V2 pool to exchange between bCHAIN and BUSD.
+    // 0x3666d1eE816852A6BD08196243567D3945058E40
+    const bSTBLStakeToken = useContract('0xcC093E98a673E5702037754F20b81D636C56F1ec', PairABI, false); //PancakeSwap V2 pool to exchange between bSTBL and BUSD.
+    // 0xaF748cE79E2c966a660A34c803e63A3e6553E670
 
+   
     const [bdlApy, setBdlApy] = useState('...');
     const [bDEFIApy, setbDEFIApy] = useState('...');
     const [bCHAINApy, setbChainApy] = useState('...');
     const [bSTBLApy, setbSTBLApy] = useState('...');
+
+    console.log(bSTBLStakeToken)
+    
 
     if (minter != undefined && bundleToken != undefined) {
         getApy(
@@ -164,8 +172,10 @@ const Landing: React.FC = (): React.ReactElement => {
             minter,
             bundleToken,
             stakeToken,
-            '0x7ff78e1cab9a2710eb6486ecbf3d94d125039364', // Bundle (BDL) (@$0.00)
-            '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'//Wrapped BNB (WBNB) (@$242.8211)
+            '0x620F9998cf912F38030610690e2F164A54F5d44b',
+            '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd'
+            // '0x7ff78e1cab9a2710eb6486ecbf3d94d125039364', // Bundle (BDL) (@$0.00)
+            // '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'//Wrapped BNB (WBNB) (@$242.8211)
         );
         getApy(
             '1',
@@ -173,8 +183,8 @@ const Landing: React.FC = (): React.ReactElement => {
             minter,
             bundleToken,
             bDEFIStakeToken,
-            '0x9eeA2a500455cb08BfdF20D1000a0B5CFF63A495', // bDeFi Index (bDEFI)
-            '0xe9e7cea3dedca5984780bafc599bd69add087d56' // Binance-Peg BUSD Token (BUSD) 
+            '0x045FE47f58b673402D79Ee13c509bB9E745b793B', // bDeFi Index (bDEFI)
+            '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee' // Binance-Peg BUSD Token (BUSD) 
         );
         getApy(
             '2',
@@ -182,8 +192,8 @@ const Landing: React.FC = (): React.ReactElement => {
             minter,
             bundleToken,
             bCHAINStakeToken,
-            '0x3E96F79a607d0d2199976c292f9CDF73991A3439', //bChain Index (bCHAIN)
-            '0xe9e7cea3dedca5984780bafc599bd69add087d56' // Binance-Peg BUSD Token (BUSD) (@$1.00)
+            '0x0f2CA5Fb9379de74C2E0dF51538a9E4e2f2b50af', //bChain Index (bCHAIN)
+            '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee' // Binance-Peg BUSD Token (BUSD) (@$1.00)
         );
         getApy(
             '3',
@@ -191,8 +201,8 @@ const Landing: React.FC = (): React.ReactElement => {
             minter,
             bundleToken,
             bSTBLStakeToken,
-            '0x934C7F600d6eE2fb60CdFf61d1b9fC82C6b8C011', //bStable (bSTBL)
-            '0xe9e7cea3dedca5984780bafc599bd69add087d56' //Binance-Peg BUSD Token (BUSD) (@$1.00)
+            '0x64cA8Ab4f3214c8D3fc8D0d865A97D0aaF22F514', //bStable (bSTBL)
+            '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee' //Binance-Peg BUSD Token (BUSD) (@$1.00)
         );
     }
 

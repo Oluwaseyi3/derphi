@@ -22,7 +22,7 @@ const Field = styled.span`
     color: ${(props) => props.theme.grey};
 `;
 
-const FUNDS = ['bDEFI', 'bCHAIN', 'bSTBL'];
+const FUNDS = ['dDEFI', 'dCHAIN', 'dSTBL'];
 
 const Landing: React.FC = (): React.ReactElement => {
     const { library } = useWeb3React();

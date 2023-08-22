@@ -1,26 +1,43 @@
 import { BigNumberish } from '@ethersproject/bignumber';
-import useSWR from 'swr';
 import { parseBalance } from '../util';
-import useKeepSWRDataLiveAsBlocksArrive from './useKeepSWRDataLiveAsBlocksArrive';
 import { Contract } from '@ethersproject/contracts';
 import { useWeb3React } from '@web3-react/core';
+import useSWR from 'swr';
+import useKeepSWRDataLiveAsBlocksArrive from './useKeepSWRDataLiveAsBlocksArrive';
 
-function getBalance(bundleToken: Contract) {
-    return async (address: any, _: any) => {
-        return bundleToken.balanceOf(address).then((balance: BigNumberish) => parseBalance(balance));
-    };
+async function getBalance(bundleToken: Contract, address: string): Promise<BigNumberish> {
+    const balance = await bundleToken.balanceOf(address);
+    return parseBalance(balance);
 }
 
-export default function useBalance(bundleToken: Contract | undefined, suspense = false) {
+export default function useBalance(bundleToken: Contract | undefined) {
     const { account } = useWeb3React();
 
     const shouldFetch = typeof account === 'string' && !!bundleToken;
 
-    const result = useSWR(shouldFetch ? [account, 'Balance'] : null, getBalance(bundleToken!), {
-        suspense,
-    });
+    const balanceFetcher = async () => {
+        if (!bundleToken || !account) {
+            return null;
+        }
 
-    useKeepSWRDataLiveAsBlocksArrive(result.mutate);
+        try {
+            const balance = await getBalance(bundleToken, account);
+            console.log(balance);
+            
+            return balance;
+        } catch (error) {
+            console.error('Error fetching balance:', error);
+            return null;
+        }
+    };
 
-    return result;
+    const { data: balance, error } = useSWR(shouldFetch ? ['balance', account] : null, balanceFetcher);
+
+    useKeepSWRDataLiveAsBlocksArrive(balanceFetcher);
+
+    return {
+        balance,
+        isLoading: shouldFetch && !balance && !error,
+        isError: !!error,
+    };
 }

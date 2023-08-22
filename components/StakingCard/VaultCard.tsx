@@ -177,6 +177,9 @@ const VaultCard: React.FC<Props> = (props: Props): React.ReactElement => {
     const bundleToken = useContract(bundleTokenAddress!, BundleTokenABI, true);
     const vault = useContract(props.vault, VaultABI, true);
 
+    console.log(vault);
+    
+
     useEffect(() => {
         if (!props.disabled) {
             getApr(setApr, bundleToken, vault, chainId);
