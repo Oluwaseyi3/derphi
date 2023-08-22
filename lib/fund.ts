@@ -16,27 +16,27 @@ export interface Fund {
 type NamedFunds = { [key: string]: Fund };
 
 const FUNDS: NamedFunds = {
-    bDEFI: {
-        name: 'bDeFi Index',
-        address: '0x9eea2a500455cb08bfdf20d1000a0b5cff63a495',
+    dDEFI: {
+        name: 'dDeFi Index',
+        address: '0x045FE47f58b673402D79Ee13c509bB9E745b793B',
         assets: ['UNI', 'LINK', 'SUSHI', 'COMP', 'CAKE', 'BIFI', 'ALPACA', 'MIR', 'CREAM'],
         symbol: 'bDEFI',
         description: 'A hyper-focused index containing market-leading cross-chain and BSC native DeFi protocols.',
         autoGas: '5000000',
         cgid: 'bdefi',
     },
-    bCHAIN: {
-        name: 'bChain Index',
-        address: '0x3e96f79a607d0d2199976c292f9cdf73991a3439',
+    dCHAIN: {
+        name: 'dChain Index',
+        address: '0x0f2CA5Fb9379de74C2E0dF51538a9E4e2f2b50af  ',
         assets: ['BTCB', 'ETH', 'WBNB', 'ADA', 'DOT'],
         symbol: 'bCHAIN',
         description: 'A hyper-focused index containing native assets of market-leading chains and high-cap protocols.',
         autoGas: '3000000',
         cgid: 'bchain',
     },
-    bSTBL: {
-        name: 'bStable Index',
-        address: '0x934c7f600d6ee2fb60cdff61d1b9fc82c6b8c011',
+    dSTBL: {
+        name: 'dStable Index',
+        address: '0x64cA8Ab4f3214c8D3fc8D0d865A97D0aaF22F514 ',
         assets: ['USDC', 'DAI', 'BUSD', 'USDT'],
         symbol: 'bSTBL',
         description: 'A risk-mitigated stable index of high-cap collateralized and algorithmic stablecoins.',
