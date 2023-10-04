@@ -167,11 +167,11 @@ const Flow: React.FC<Props> = (props: Props): React.ReactElement => {
     const balances: BigNumber[] | undefined = useRawBalances(contracts).data;
 
     const pegContract = useERC20Contract(PEG, true);
-    const pegBalance = useRawBalance(pegContract).data;
+    const pegBalance = useRawBalance(pegContract).balance;
     const pegApproved = useApproved(pegContract, BUNDLE_ROUTER).data;
 
     const fundContract = useContract(props.fund?.address, BundleABI, true);
-    const fundBalance = useRawBalance(fundContract).data;
+    const fundBalance = useRawBalance(fundContract).balance;
     const fundApproved = useApproved(fundContract, BUNDLE_ROUTER).data;
 
     const bundleRouter = useContract(BUNDLE_ROUTER, BundleRouterABI, true);
