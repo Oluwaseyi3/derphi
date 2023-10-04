@@ -233,7 +233,7 @@ const StakingCard: React.FC<Props> = (props: Props): React.ReactElement => {
 
     const stakedBalance = useStakedBalance(minter, props.pid).data;
     const pendingRewards = usePendingRewards(minter, props.pid).data;
-    const unstakedBalance = useRawBalance(stakeToken).data;
+    const unstakedBalance = useRawBalance(stakeToken).balance;
     const approved = useApproved(stakeToken, minterAddress).data;
 
     return (
