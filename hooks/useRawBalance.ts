@@ -8,16 +8,34 @@ function getPendingBalance(token: Contract) {
         return token.balanceOf(address);
     };
 }
-
 export default function useRawBalance(token: Contract | undefined, suspense = false) {
     const { account } = useWeb3React();
     const shouldFetch = typeof account === 'string' && !!token;
-
-    const result = useSWR(shouldFetch ? [account, 'UnstakedBalance', token] : null, getPendingBalance(token!), {
+  
+    // Log the SWR key for debugging
+    // console.log("SWR Key:", shouldFetch ? ['UnstakedBalance', account, token?.address] : null);
+  
+    const { data: balance, error, isLoading } = useSWR(
+      shouldFetch ? ['UnstakedBalance', account, token?.address] : null, // Use token?.address to handle possible undefined token
+      getPendingBalance(token!),
+      {
         suspense,
-    });
-
-    useKeepSWRDataLiveAsBlocksArrive(result.mutate);
-
-    return result;
-}
+      }
+    );
+  
+    // Log the balance and error for debugging
+    // console.log("Balance:", balance);
+    // console.log("Error:", error);
+  
+    return {
+      balance,
+      isLoading: shouldFetch && isLoading, // Check isLoading
+      isError: !!error,
+    };
+  }
+  
+  
+  
+  
+  
+  

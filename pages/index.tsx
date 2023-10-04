@@ -13,7 +13,7 @@ import PairABI from '../contracts/Pair.json';
 import { formatUnits, parseEther } from '@ethersproject/units';
 import { getAsset } from '../lib/asset';
 
-const CHAINID = 97;
+const CHAINID = 137;
 
 interface RowContainerProps {
     dark?: boolean;

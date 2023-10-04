@@ -10,6 +10,7 @@ import { Contract } from '@ethersproject/contracts';
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import { Col, Row, InputNumber } from 'antd';
 import useRawBalance from '../../hooks/useRawBalance';
+import useBalance from '../../hooks/useBalance';
 import OutlinedButton from '../Button/Outline';
 import useApproved from '../../hooks/useApproved';
 import { BigNumber } from '@ethersproject/bignumber';
@@ -160,7 +161,7 @@ const getApr = async (
         const total = await bundleToken.balanceOf(vault.address);
         const tvl = price * total.div(parseEther('1'));
 
-        const apr = (2000 / tvl) * 12;
+        const apr = (2000 / 200000) * 12;
 
         setApr(`${formatNumber(apr * 100)}%`);
     }
@@ -168,16 +169,18 @@ const getApr = async (
 
 const VaultCard: React.FC<Props> = (props: Props): React.ReactElement => {
     const [expanded, setExpanded] = useState(false);
-    const [apr, setApr] = useState('...');
+    const [apr, setApr] = useState('5');
     const [toStake, setToStake] = useState(BigNumber.from(0));
     const [toUnstake, setToUnstake] = useState(BigNumber.from(0));
 
     const { chainId } = useWeb3React();
-    const bundleTokenAddress = getNamedAddress(chainId, 'BundleToken');
+    const bundleTokenAddress = getNamedAddress(chainId, 'DerpfiToken');
+    console.log(bundleTokenAddress);
+    
     const bundleToken = useContract(bundleTokenAddress!, BundleTokenABI, true);
+    console.log(bundleToken?.address);
     const vault = useContract(props.vault, VaultABI, true);
 
-    console.log(vault);
     
 
     useEffect(() => {
@@ -186,8 +189,10 @@ const VaultCard: React.FC<Props> = (props: Props): React.ReactElement => {
         }
     }, [chainId]);
 
-    const stakedBalance = useVaultBalance(vault).data;
-    const unstakedBalance = useRawBalance(bundleToken).data;
+    const stakedBalance = useVaultBalance(vault).data
+    // console.log(apr)
+    const unstakedBalance = useRawBalance(bundleToken).balance
+    console.log(unstakedBalance)
     const approved = useApproved(bundleToken, props.vault).data;
 
     return (

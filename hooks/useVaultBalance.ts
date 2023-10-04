@@ -1,7 +1,7 @@
 import useSWR from 'swr';
-import useKeepSWRDataLiveAsBlocksArrive from './useKeepSWRDataLiveAsBlocksArrive';
 import { Contract } from '@ethersproject/contracts';
 import { useWeb3React } from '@web3-react/core';
+import useKeepSWRDataLiveAsBlocksArrive from './useKeepSWRDataLiveAsBlocksArrive';
 
 function getVaultBalance(vault: Contract) {
     return async (address: any, _: any) => {
@@ -13,10 +13,12 @@ export default function useVaultBalance(vault: Contract | undefined, suspense = 
     const { account } = useWeb3React();
     const shouldFetch = typeof account === 'string' && !!vault;
 
+
+
     const result = useSWR(shouldFetch ? [account, 'UnstakedBalance', vault] : null, getVaultBalance(vault!), {
         suspense,
     });
-
+    console.log(shouldFetch, result)
     useKeepSWRDataLiveAsBlocksArrive(result.mutate);
 
     return result;

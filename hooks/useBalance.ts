@@ -22,7 +22,7 @@ export default function useBalance(bundleToken: Contract | undefined) {
 
         try {
             const balance = await getBalance(bundleToken, account);
-            console.log(balance);
+           
             
             return balance;
         } catch (error) {
@@ -33,7 +33,7 @@ export default function useBalance(bundleToken: Contract | undefined) {
 
     const { data: balance, error } = useSWR(shouldFetch ? ['balance', account] : null, balanceFetcher);
 
-    useKeepSWRDataLiveAsBlocksArrive(balanceFetcher);
+    // useKeepSWRDataLiveAsBlocksArrive(balanceFetcher);
 
     return {
         balance,

@@ -142,11 +142,10 @@ const Landing: React.FC = (): React.ReactElement => {
     const bundleTokenAddress = getNamedAddress(chainId, 'DerpfiToken');
     const bundleToken = useContract(bundleTokenAddress!, BundleTokenABI, true);
    
-    // console.log(bundleToken);
     
 
     const balance = useBalance(bundleToken).balance
-     console.log(balance);
+    console.log(balance);
      
    
     const lockedBalance = useLockedBalance(bundleToken).data;

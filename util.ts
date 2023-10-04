@@ -6,8 +6,8 @@ export function shortenHex(hex: string, length: number = 4): string {
 }
 
 const NAMED_ADDRESSES: { [index: number]: { [index: string]: string } } = {
-    97: {
-        DerpfiToken: '0x620F9998cf912F38030610690e2F164A54F5d44b',
+    137: {
+        DerpfiToken: '0xa1fc310115FbC3b0e72DEf432Ccb91FABF9fcb94',
         Minter: '0xAEAbF28093fE275bF27c18f41a72e15cfb2FcBAF',
         BDLBNB: '0x620F9998cf912F38030610690e2F164A54F5d44b',
         BundleVault: '0x133F0aDDb0a549E4F70d0bCF2C724050B8cf7284 ',
@@ -20,7 +20,7 @@ const NAMED_ADDRESSES: { [index: number]: { [index: string]: string } } = {
     // },
 };
 
-export const CHAIN_IDS: (number | undefined)[] = [97];
+export const CHAIN_IDS: (number | undefined)[] = [137];
 
 const NUMERIC_UNITS: { [index: number]: string } = {
     1: 'K',
