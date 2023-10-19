@@ -1,15 +1,17 @@
-import { ExternalProvider, JsonRpcFetchFunc, Web3Provider } from '@ethersproject/providers';
-import { Web3ReactProvider } from '@web3-react/core';
+
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { Layout } from 'antd';
+import { WagmiConfig, createConfig, configureChains, mainnet } from 'wagmi'
+import { publicProvider } from 'wagmi/providers/public'
+import { polygon } from 'wagmi/chains'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import 'antd/dist/antd.css';
 
-function getLibrary(provider: ExternalProvider | JsonRpcFetchFunc) {
+/*function getLibrary(provider: ExternalProvider | JsonRpcFetchFunc) {
     return new Web3Provider(provider);
-}
+}*/
 
 const theme = {
     maxWidth: '1500px',
